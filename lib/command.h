@@ -1,0 +1,46 @@
+/* commands */
+/* clipboard */
+static const char *urlcmd[]		= { "clipmenu-url", NULL };
+static const char *clipcmd[]	= { "clipmenu", "-i", "-fn", dmenufont, NULL };
+static const char *passmenu[]	= { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+
+
+/*lounch menu */
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+
+/* terminal */
+static const char *termcmd[] = { "st", NULL };
+
+/* browser */
+static const char *Webcmd[] = { "firefox", NULL };
+
+/* webcam control */
+static const char *WebCamcmd[] = { "mpv", "--no-osc", "--no-input-default-bindings", "--input-conf=/dev/null", "--title='mpvfloat'", "/dev/video0", NULL };
+
+/* audio control */
+static const char *cmdsoundup[] = { "amixer", "-q", "sset", "Master", "5%+", NULL };
+static const char *cmdsounddown[] = { "amixer", "-q", "sset", "Master", "5%-", NULL };
+static const char *cmdsoundtoggle[] = { "amixer", "-q", "sset", "Master", "toggle", NULL };
+static const char *cmdMicOff[] = { "amixer", "cset", "numid=11,iface=MIXER,name='Capture Switch'", "toggle", NULL };
+
+/* luminosità dello schermo */
+static const char *cmdbrightnessup[] = { "sudo", "brightness", "up", NULL };
+static const char *cmdbrightnessdown[] = { "sudo", "brightness", "down", NULL };
+static const char *screenshot[] = { "flameshot", "gui", "-p", "/tmp", NULL };
+/* gestione dello schermo */
+static const char *screenSwitch[] = { "arandr", NULL };
+/* applicativi che utilizzo */
+static const char *devOptioncmd[] = { "dmdev", NULL };
+/* Telegram */
+static const char *Telegramcmd[] = { "telegram-desktop", NULL };
+/* Discord */
+static const char *Discordcmd[] = { "discord", NULL };
+/* Emoji */
+static const char *emojicmd[] = { "dmenuunicode", NULL };
+/* attivare e disattivare il toucpad */
+static const char *touchpadcmd[] = { "touchpad", NULL };
+/*posta elettronica */
+static const char *tutacmd[] = { "tuta.AppImage", NULL };
+/* Impostazioni di sistema */
+static const char *Impcmd[] = { "dmOps",NULL };
