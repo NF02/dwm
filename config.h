@@ -67,7 +67,6 @@ static const Layout layouts[] = {
 /* commands */
 #include "lib/command.h"
 #include "lib/keyWorld.h"
-int togleMic=0;
 
 static Key keys[] = {
 	/* modifier                     key		        function        argument */
