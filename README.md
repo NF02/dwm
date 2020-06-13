@@ -4,7 +4,6 @@ personalizzazioni, viene utilizzato all'interno della
 <a href="https://github.com/NF02/dotfiles">mia configurazione</a>
 ## patch applicate
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
-- <a href="https://dwm.suckless.org/patches/fullgaps/">fullgaps</a>.
 ## Modifiche
 le modifiche implementate sono le seguenti:
 - Ho rimosso un if che lo portava al crush nel caso degli emoji
@@ -14,5 +13,4 @@ le modifiche implementate sono le seguenti:
     - keyWorld.h - al suo interno vengono mappati tutti i tasti dei
     <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series">Thinkpad della serie T</a>;
     - command.h - contiene la maggioranza dei comandi che vengono eseguiti con le shortcuts;
-    - fibonacci.c - gestisce il layout.
 - Ho disattivato il resizehints.
