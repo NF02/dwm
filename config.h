@@ -72,14 +72,14 @@ int togleMic=0;
 static Key keys[] = {
 	/* modifier                     key		        function        argument */
 	/* 					Apps					*/
-	{ MODKEY,                       XK_Insert,				spawn,          {.v = clipcmd } },
-	{ MODKEY|ShiftMask,             XK_Insert,              spawn,          {.v = passmenu } },
-	{ MODKEY|ShiftMask,             XK_o,					spawn,          {.v = urlcmd } },
-	{ MODKEY,                       XK_p,					spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return,				spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,				XK_v,					spawn,			{.v = WebCamcmd } },
+	{ MODKEY,                       			XK_Insert,				spawn,          	{.v = clipcmd } },
+	{ MODKEY|ShiftMask,             			XK_Insert,			        spawn,          	{.v = passmenu } },
+	{ MODKEY|ShiftMask,            				XK_o,					spawn,          	{.v = urlcmd } },
+	{ MODKEY,             					XK_p,					spawn,          	{.v = dmenucmd } },
+	{ MODKEY|ShiftMask,     			        XK_Return,				spawn,          	{.v = termcmd } },
+	{ MODKEY|ShiftMask,					XK_v,					spawn,			{.v = WebCamcmd } },
 	{ MODKEY,						XK_w,					spawn,			{.v = Webcmd } },
-	{ MODKEY|ShiftMask,				XK_F1,					spawn,			SHCMD("st -e ranger") },
+	{ MODKEY|ShiftMask,					XK_F1,					spawn,			SHCMD("st -e ranger") },
 	{ MODKEY,						XK_F2,					spawn,			{.v = devOptioncmd } },
 	{ MODKEY,						XK_F3,					spawn,			{.v = Telegramcmd } },
 	{ MODKEY,						XK_F4,					spawn,			{.v = Discordcmd } },
