@@ -2,6 +2,21 @@
 È un fork di <a href="dwm.suckless.org">dwm</a> con delle patch e delle 
 personalizzazioni, viene utilizzato all'interno della 
 <a href="https://github.com/NF02/dotfiles">mia configurazione</a>
+```
+                           +------+----------------------------------+--------+
+                           | tags | title                            | status +
+                           +------+---------------------+------------+--------+
+                           |                            |                     |
+                           |                            |                     |
+                           |                            |                     |
+                           |                            |                     |
+                           |          master            |        stack        |
+                           |                            |                     |
+                           |                            |                     |
+                           |                            |                     |
+                           |                            |                     |
+                           +----------------------------+---------------------+
+```
 ## patch applicate
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
 ## Modifiche
@@ -14,3 +29,48 @@ le modifiche implementate sono le seguenti:
     <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series">Thinkpad della serie T</a>;
     - command.h - contiene la maggioranza dei comandi che vengono eseguiti con le shortcuts;
 - Ho disattivato il resizehints.
+## Layout
+### tile []=
+```
++----------+------+
+|          |      |
+|          +------+
+|          |      |
+|          +------+
+|          |      |
++----------+------+
+
+```
+### monocle [M]
+```
++-----------------+
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
++-----------------+
+```
+### bstack (TTT)
+```
++-----------------+
+|                 |
+|                 |
+|                 |
++-----+-----+-----+
+|     |     |     |
+|     |     |     |
++-----+-----+-----+
+```
+### bstackhoriz (===)
+```
++-----------------+
+|                 |
+|                 |
+|                 |
++-----------------+
++-----------------+
++-----------------+
++-----------------+
+```
