@@ -32,6 +32,7 @@ le modifiche implementate sono le seguenti:
 - Ho disattivato il resizehints.
 ## Layout
 ### tile []=
+Mod-t
 ```
 +----------+------+
 |          |      |
@@ -43,6 +44,7 @@ le modifiche implementate sono le seguenti:
 
 ```
 ### monocle [M]
+Mod-m
 ```
 +-----------------+
 |                 |
@@ -54,6 +56,7 @@ le modifiche implementate sono le seguenti:
 +-----------------+
 ```
 ### bstack (TTT)
+Mod-o
 ```
 +-----------------+
 |                 |
@@ -65,6 +68,7 @@ le modifiche implementate sono le seguenti:
 +-----+-----+-----+
 ```
 ### bstackhoriz (===)
+Mod-u
 ```
 +-----------------+
 |                 |
