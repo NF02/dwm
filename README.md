@@ -21,6 +21,7 @@ personalizzazioni, viene utilizzato all'interno della
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
 - <a href="https://dwm.suckless.org/patches/fullscreen/">fullscreen</a>;
 - <a href="https://dwm.suckless.org/patches/centeredmaster/">centeredmaster</a>
+- <a href="https://dwm.suckless.org/patches/fibonacci/">fibonacci</a>
 ## Modifiche
 le modifiche implementate sono le seguenti:
 - Ho rimosso un if che lo portava al crush nel caso degli emoji
@@ -111,6 +112,33 @@ Mod-Shift-o
 ||        ||        ||        ||       ||        ||        ||        ||
 |+--------++--------++--------+|       |+--------++--------++--------+|
 +------------------------------+       +------------------------------+
+```
+### fibonacci layout
+#### spiral
+Mod-n
+```
++-----------+-----------+ 
+|           |           |
+|           |     2     |
+|           |           |
+|     1     +--+--+-----+
+|           | 5|-.|     |
+|           +--+--+  3  |
+|           |  4  |     |
++-----------+-----+-----+
+```
+#### dwindle
+Mod-Shoft-n
+```
++-----------+-----------+
+|           |           |
+|           |     2     |
+|           |           |
+|     1     +-----+-----+
+|           |     |  4  |
+|           |  3  +--+--+
+|           |     | 5|-.|
++-----------+-----+-----+
 ```
 ## Installazione
 make && sudo make install
