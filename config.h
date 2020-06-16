@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 #include "lib/keyWorld.h"
 
 static Key keys[] = {
-	/* modifier                     key		        function        argument */
+	/* modifier                                             key		                function        argument */
 	/* 					Apps					*/
 	{ MODKEY,						XK_Insert,			spawn,         	{.v = clipcmd } },
 	{ MODKEY|ShiftMask,					XK_Insert,		        spawn,         	{.v = passmenu } },
