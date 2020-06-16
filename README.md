@@ -20,7 +20,7 @@ personalizzazioni, viene utilizzato all'interno della
 ## patch applicate
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
 - <a href="https://dwm.suckless.org/patches/fullscreen/">fullscreen</a>;
-- <a href="https://dwm.suckless.org/patches/centeredmaster/">centeredmaster</a>
+- <a href="https://dwm.suckless.org/patches/centeredmaster/">centeredmaster</a>;
 - <a href="https://dwm.suckless.org/patches/fibonacci/">fibonacci</a>
 ## Modifiche
 le modifiche implementate sono le seguenti:
