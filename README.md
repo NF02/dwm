@@ -19,6 +19,7 @@ personalizzazioni, viene utilizzato all'interno della
 ```
 ## patch applicate
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
+- <a href="https://dwm.suckless.org/patches/fullscreen/">fullscreen</a>;
 ## Modifiche
 le modifiche implementate sono le seguenti:
 - Ho rimosso un if che lo portava al crush nel caso degli emoji
@@ -74,3 +75,5 @@ le modifiche implementate sono le seguenti:
 +-----------------+
 +-----------------+
 ```
+## Installazione
+make && sudo make install
