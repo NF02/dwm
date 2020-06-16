@@ -20,6 +20,7 @@ personalizzazioni, viene utilizzato all'interno della
 ## patch applicate
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
 - <a href="https://dwm.suckless.org/patches/fullscreen/">fullscreen</a>;
+- <a href="https://dwm.suckless.org/patches/centeredmaster/">centeredmaster</a>
 ## Modifiche
 le modifiche implementate sono le seguenti:
 - Ho rimosso un if che lo portava al crush nel caso degli emoji
