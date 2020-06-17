@@ -142,3 +142,5 @@ Mod-Shoft-n
 ```
 ## Installazione
 make && sudo make install
+## Attenzione: nel caso degli Emojis o caratteri speciali
+Nel caso in cui st presentasse un crask o non visualizza i caratteri, installate <a href="https://aur.archlinux.org/packages/libxft-bgra/">libxft-bgra</a> presente nel AUR.
