@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus (TTF):pixelsize=12", "JoyPixels:pixelsize=11:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Terminus (TTF):pixelsize=18";
+static const char *fonts[]          = { "Terminus:style=Regular:pixelsize=14:antialias=true:autohint=true", "JoyPixels:pixelsize=11:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Terminus:style=Regular:pixelsize=18:antialias=true:autohint=true";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
