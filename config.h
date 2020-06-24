@@ -81,7 +81,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,					XK_o,				spawn,         	{.v = urlcmd } },
 	{ MODKEY,						XK_p,				spawn,         	{.v = dmenucmd } },
 	{ MODKEY|ShiftMask,					XK_Return,			spawn,         	{.v = termcmd } },
-	{ MODKEY|ShiftMask,					XK_v,				spawn,		{.v = WebCamcmd } },
+	{ 0,							XF86WebCam,			spawn,		{.v = WebCamcmd } },
 	{ MODKEY,						XK_w,				spawn,		{.v = Webcmd } },
 	{ MODKEY|ShiftMask,					XK_F1,				spawn,		SHCMD("st -e ranger") },
 	{ MODKEY,						XK_F2,				spawn,		{.v = devOptioncmd } },
