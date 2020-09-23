@@ -1,10 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int gappih    = 15;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 15;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 15;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 15;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -16,8 +16,8 @@ static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#268bd2";
-static char selbgcolor[]            = "#002b36";
+static char selbordercolor[]        = "#af1010";
+static char selbgcolor[]            = "#22d0aa";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 
@@ -33,7 +33,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -80,7 +80,8 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-
+#define TERM "st"
+#define TMUX "st -e tmux"
 /* commands */
 #include "lib/command.h"
 #include "lib/keyWorld.h"
@@ -92,21 +93,23 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_Insert,				spawn,     	{.v = passmenu } },
 	{ MODKEY|ShiftMask,				XK_o,					spawn,     	{.v = urlcmd } },
 	{ MODKEY,						XK_p,					spawn,      {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,				XK_Return,				spawn,     	{.v = termcmd } },
+	{ MODKEY|ShiftMask,				XK_Return,				spawn,     	SHCMD(TERM) },
 	{ MODKEY,						XK_w,					spawn,		{.v = Webcmd } },
 	{ 0,							XF86WebCam,				spawn,		{.v = WebCamcmd } },
-	{ MODKEY|ShiftMask,				XK_F1,					spawn,		SHCMD("st -e ranger") },
+	{ MODKEY,						XK_F1,					spawn,		SHCMD(TERM " -e ranger") },
+	{ MODKEY|ShiftMask,				XK_F1,					spawn,		SHCMD(TERM " -e bashtop") },
 	{ MODKEY,						XK_F2,					spawn,		{.v = devOptioncmd } },
-	{ MODKEY,						XK_F3,					spawn,		{.v = Telegramcmd } },
-	{ MODKEY,						XK_F4,					spawn,		{.v = Discordcmd } },
+	{ MODKEY|ShiftMask,				XK_F2,					spawn,		SHCMD("dmLOffice") },
+	{ MODKEY|ShiftMask,				XK_F3,					spawn,		{.v = Telegramcmd } },
+	{ MODKEY|ShiftMask,				XK_F4,					spawn,		{.v = Discordcmd } },
 	{ MODKEY,						XK_F5,					spawn,		{.v = emojicmd } },
 	{ MODKEY,						XK_F6,					spawn,		{.v = Impcmd } },
 	{ MODKEY,						XK_F7,					spawn,		{.v = tutacmd } },
 	{ MODKEY,						XK_F8,					spawn,		{.v = touchpadcmd } },
-	{ MODKEY,						XK_F9,					spawn,	   	SHCMD("dmenumount") },
+	{ MODKEY,						XK_F9,					spawn,		SHCMD("dmenumount") },
 	{ MODKEY,						XK_F10,					spawn,		SHCMD("dmenuumount") },
 	{ 0,							XK_Print,				spawn,		{.v = screenshot } },
-	{ 0,							XF86ScreenSaver,		spawn,	 	SHCMD("slock") },
+	{ 0,							XF86ScreenSaver,		spawn,		SHCMD("slock") },
 	{ 0,							XF86MonBrightnessDown,  spawn,		{.v = cmdbrightnessdown } },
 	{ 0,							XF86MonBrightnessUp,   	spawn,		{.v = cmdbrightnessup } },
 	{ 0,							XF86AudioMute,          spawn,		{.v = cmdsoundtoggle } },
