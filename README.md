@@ -1,7 +1,7 @@
 # dwm
-È un fork di <a href="dwm.suckless.org">dwm</a> con delle patch e delle 
-personalizzazioni, viene utilizzato all'interno della 
-<a href="https://github.com/NF02/dotfiles">mia configurazione</a>
+It is a fork of <a href="dwm.suckless.org"> dwm </a> with patches and
+customizations, is used within the
+<a href="https://github.com/NF02/dotfiles"> my configuration </a>
 ```
                            +------+----------------------------------+--------+
                            | tags | title                            | status +
@@ -24,16 +24,16 @@ personalizzazioni, viene utilizzato all'interno della
 - <a href="https://dwm.suckless.org/patches/fibonacci/">fibonacci</a>;
 - <a href="https://dwm.suckless.org/patches/xrdb/">xrdb-pywal</a>;
 - <a href="https://dwm.suckless.org/patches/vanitygaps/">vanitygaps</a>.
-## Modifiche
-le modifiche implementate sono le seguenti:
-- Ho rimosso un if che lo portava al crush nel caso degli emoji
-  perché il software per filosofia è estremamente minimalista e
-  non accetta alcuni carattere speciali.
-- Ho creato la cartella *lib* e all'interno sono contenute tre librerie
-    - keyWorld.h - al suo interno vengono mappati tutti i tasti dei
-    <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series">Thinkpad della serie T</a>;
-    - command.h - contiene la maggioranza dei comandi che vengono eseguiti con le shortcuts;
-- Ho disattivato il resizehints.
+## Changes
+the changes implemented are the following:
+- I removed an if that led to crush in the case of emojis
+   because philosophy software is extremely minimalist e
+   it does not accept any special characters.
+- I created the * lib * folder and it contains three libraries
+     - keyWorld.h - all the keys are mapped into it
+     <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series"> T-series Thinkpad </a>;
+     - command.h - contains most of the commands that are executed with shortcuts;
+- I have deactivated the resizehints.
 ## Layout
 ### tile []=
 Mod-t
@@ -131,7 +131,8 @@ Mod-Shoft-n
 |           |     | 5|-.|
 +-----------+-----+-----+
 ```
-## Installazione
+## Installation
 make && sudo make install
-## Attenzione: nel caso degli Emojis o caratteri speciali
-Nel caso in cui st presentasse un crask o non visualizza i caratteri, installate <a href="https://aur.archlinux.org/packages/libxft-bgra/">libxft-bgra</a> presente nel AUR.
+
+## Attention: in the case of Emojis or special characters
+In case st has a crask or does not display the fonts, install the <a href="https://aur.archlinux.org/packages/libxft-bgra/"> libxft-bgra </a> present in the AUR.
