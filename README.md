@@ -29,7 +29,7 @@ the changes implemented are the following:
 - I removed an if that led to crush in the case of emojis
    because philosophy software is extremely minimalist e
    it does not accept any special characters.
-- I created the * lib * folder and it contains three libraries
+- I created the *lib* folder and it contains three libraries
      - keyWorld.h - all the keys are mapped into it
      <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series"> T-series Thinkpad </a>;
      - command.h - contains most of the commands that are executed with shortcuts;
@@ -141,4 +141,4 @@ Mod-Shoft-n
 make && sudo make install
 
 ## Attention: in the case of Emojis or special characters
-In case st has a crask or does not display the fonts, install the <a href="https://aur.archlinux.org/packages/libxft-bgra/"> libxft-bgra </a> present in the AUR.
+In case st has a crask or does not display the fonts, install the <a href="https://aur.archlinux.org/packages/libxft-bgra/">libxft-bgra</a> present in the AUR.
