@@ -31,7 +31,7 @@ the changes implemented are the following:
    it does not accept any special characters.
 - I created the *lib* folder and it contains three libraries
      - keyWorld.h - all the keys are mapped into it
-     <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series"> T-series Thinkpad </a>;
+     <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series">T-series Thinkpad</a>;
      - command.h - contains most of the commands that are executed with shortcuts;
 - I have deactivated the resizehints option in config.h.
 ``` C++
