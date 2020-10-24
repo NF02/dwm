@@ -33,7 +33,13 @@ the changes implemented are the following:
      - keyWorld.h - all the keys are mapped into it
      <a href="https://en.wikipedia.org/wiki/ThinkPad_T_series"> T-series Thinkpad </a>;
      - command.h - contains most of the commands that are executed with shortcuts;
-- I have deactivated the resizehints.
+- I have deactivated the resizehints option in config.h.
+``` C++
+/* layout(s) */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster     = 1;    /* number of clients in master area */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+```
 ## Layout
 ### tile []=
 Mod-t
