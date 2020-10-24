@@ -17,12 +17,12 @@ personalizzazioni, viene utilizzato all'interno della
                            |                            |                     |
                            +----------------------------+---------------------+
 ```
-## patch applicate
+## patch 
 - <a href="https://dwm.suckless.org/patches/bottomstack/">bottomstack</a>;
 - <a href="https://dwm.suckless.org/patches/fullscreen/">fullscreen</a>;
 - <a href="https://dwm.suckless.org/patches/centeredmaster/">centeredmaster</a>;
 - <a href="https://dwm.suckless.org/patches/fibonacci/">fibonacci</a>;
-- <a href="https://dwm.suckless.org/patches/alpha/">alpha</a>;
+- <a href="https://dwm.suckless.org/patches/xrdb/">xrdb-pywal</a>;
 - <a href="https://dwm.suckless.org/patches/vanitygaps/">vanitygaps</a>.
 ## Modifiche
 le modifiche implementate sono le seguenti:
