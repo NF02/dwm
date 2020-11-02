@@ -137,6 +137,10 @@ Mod-Shoft-n
 |           |     | 5|-.|
 +-----------+-----+-----+
 ```
+## Requirements
+- <a href="https://github.com/NF02/st">ST</a>;
+- <a href="https://github.com/NF02/dmenu">dmenu</a>.
+
 ## Installation
 make && sudo make install
 
