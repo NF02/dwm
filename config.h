@@ -34,18 +34,19 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     	 NULL,		NULL,		6,			0,          -1 },
+	{ "Gimp",     	 NULL,		NULL,		0,			0,          -1 },
 	{ "Firefox",  	 NULL,		NULL,		0,			0,			-1 },
 	{ "Eclipse",  	 NULL,		NULL,		0,			0,          -1 },
 	{ "Galculator",  NULL,		NULL,		0,			1,			-1 },
 	{ "Libreoffice", NULL,      NULL,		0,			0,			-1 },
+	{ "Wpg",		 NULL,		NULL,		0,			1,			-1 },
 
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 #include "lib/layout.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -78,9 +79,8 @@ static const Layout layouts[] = {
 #include "lib/command.h"
 #include "lib/keyWorld.h"
 static Key keys[] = {
-	/* modifier                     key        function        argument */
-/* modifier                                             key		                function        argument */
-	/* 					Apps					*/
+	/* modifier                     key		                function    argument */
+	/*								Apps					*/
 	{ MODKEY,						XK_Insert,				spawn,     	{.v = clipcmd } },
 	{ MODKEY|ShiftMask,				XK_Insert,				spawn,     	{.v = passmenu } },
 	{ MODKEY|ShiftMask,				XK_o,					spawn,     	{.v = urlcmd } },
@@ -102,8 +102,10 @@ static Key keys[] = {
 	{ MODKEY,						XK_F8,					spawn,		{.v = touchpadcmd } },
 	{ MODKEY,						XK_F9,					spawn,		SHCMD("dmenumount") },
 	{ MODKEY,						XK_F10,					spawn,		SHCMD("dmenuumount") },
-	{ MODKEY,                       XK_F12,     xrdb,           {.v = NULL } },
+	{ MODKEY,						XK_F11,					spawn,		SHCMD(TERM " -e pulsemixer") },
+	{ MODKEY,                       XK_F12,					xrdb,       {.v = NULL } },
 	{ 0,							XK_Print,				spawn,		{.v = screenshot } },
+	{ 0,							XF86XAudioMedia,		spawn,		SHCMD(TERM "strawberry") },
 	{ 0,							XF86ScreenSaver,		spawn,		SHCMD("slock") },
 	{ 0,							XF86MonBrightnessDown,  spawn,		{.v = cmdbrightnessdown } },
 	{ 0,							XF86MonBrightnessUp,   	spawn,		{.v = cmdbrightnessup } },
@@ -112,10 +114,10 @@ static Key keys[] = {
 	{ 0,							XF86AudioLowerVolume,  	spawn,		{.v = cmdsounddown } },
 	{ 0,							XF86AudioMicMute,		spawn,		{.v = cmdMicOff } },
 	{ 0,							XF86Display,			spawn,		{.v = screenSwitch } },
-	{ 0,							XF86AudioNext,			spawn,		SHCMD("mpc next") },
-	{ 0,							XF86AudioPause,			spawn,		SHCMD("mpc pause") },
-	{ 0,							XF86AudioPlay,			spawn,		SHCMD("mpc play") },
-	{ 0,							XF86AudioStop,			spawn,		SHCMD("mpc stop") },
+	{ 0,							XF86AudioNext,			spawn,		SHCMD("playerctl next") },
+	{ 0,							XF86AudioPause,			spawn,		SHCMD("playerctl pause") },
+	{ 0,							XF86AudioPlay,			spawn,		SHCMD("playerctl play") },
+	{ 0,							XF86AudioStop,			spawn,		SHCMD("playerctl stop") },
 	/* 							Azioni dwm 							*/
 	{ MODKEY|ShiftMask,				XK_BackSpace,			spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Reboot computer?\")\" = Yes ] && sudo -A reboot") },
 	{ MODKEY,						XK_BackSpace,			spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"shutdown computer?\")\" = Yes ] && sudo -A shutdown -h now") },
