@@ -21,3 +21,4 @@
 #define	XF86AudioNext			0x1008FF17
 #define XF86AudioPause			0x1008FF31
 
+#define XF86XAudioMedia			0x1008FF32   /* Launch media collection app */
