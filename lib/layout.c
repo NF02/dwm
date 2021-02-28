@@ -6,6 +6,7 @@ static void fibonacci(Monitor *m, int s);
 static void spiral(Monitor *m);
 static void getfacts(Monitor *m, int msize, int ssize, float *mf, float *sf, int *mr, int *sr);
 static void tile(Monitor *m);
+static void doubledeck(Monitor *m);
 
 /* Internals */
 static void getgaps(Monitor *m, int *oh, int *ov, int *ih, int *iv, unsigned int *nc);
@@ -368,3 +369,25 @@ tile(Monitor *m)
 			sy += HEIGHT(c) + ih;
 		}
 }
+
+void
+doubledeck(Monitor *m) {
+	unsigned int i, n, mw;
+	Client *c;
+
+	for(n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if(n == 0)
+		return;
+
+	if(n > m->nmaster)
+		mw = m->nmaster ? m->ww * m->mfact : 0;
+	else
+		mw = m->ww;
+
+	for(i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+		if(i < m->nmaster)
+			resize(c, m->wx, m->wy, mw - (2*c->bw), m->wh - (2*c->bw), False);
+		else
+			resize(c, m->wx + mw, m->wy, m->ww - mw - (2*c->bw), m->wh - (2*c->bw), False);
+}
+
