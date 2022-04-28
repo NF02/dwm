@@ -105,7 +105,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_t,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY|ControlMask,           XK_f,      setlayout,      {.v = &layouts[7]} },
 	{ MODKEY|ControlMask,           XK_m,      setlayout,      {.v = &layouts[8]} },
-	{ 0,                            XK_Print,  spawn,          {.v = screenshot } },
+	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshot } },
 	{ 0,                            XF86ScreenSaver, spawn,    SHCMD("xscreensaver-command -lock") },
 	{ 0,                            XF86MonBrightnessDown, spawn, {.v = cmdbrightnessdown } },
 	{ 0,                            XF86MonBrightnessUp, spawn, {.v = cmdbrightnessup } },
@@ -136,6 +136,7 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	/* app launcher */
+	{ MODKEY,                       XK_F1,     spawn,          SHCMD("st -e ranger") },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = emojicmd } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = Webcmd } },
 	{ MODKEY,                       XK_F7,     spawn,          {.v = Impcmd } },
