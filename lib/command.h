@@ -1,8 +1,8 @@
 /* commands */
 /* clipboard */
-static const char *urlcmd[]		= { "clipmenu-url", NULL };
+//static const char *urlcmd[]		= { "clipmenu-url", NULL };
 static const char *clipcmd[]	= { "clipmenu", "-i", "-fn", dmenufont, NULL };
-static const char *passmenu[]	= { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+//static const char *passmenu[]	= { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 
 
 /*lounch menu */
@@ -16,7 +16,7 @@ static const char *termcmd[] = { "st", NULL };
 static const char *Webcmd[] = { "firefox", NULL };
 
 /* webcam control */
-static const char *WebCamcmd[] = { "mpv", "--no-osc", "--no-input-default-bindings", "--input-conf=/dev/null", "--title='mpvfloat'", "/dev/video0", NULL };
+//static const char *WebCamcmd[] = { "mpv", "--no-osc", "--no-input-default-bindings", "--input-conf=/dev/null", "--title='mpvfloat'", "/dev/video0", NULL };
 
 /* audio control */
 static const char *cmdsoundup[] = { "amixer", "-q", "sset", "Master", "5%+", NULL };
@@ -31,7 +31,7 @@ static const char *screenshot[] = { "flameshot", "gui", "-p", "/tmp", NULL };
 /* gestione dello schermo */
 static const char *screenSwitch[] = { "arandr", NULL };
 /* applicativi che utilizzo */
-static const char *devOptioncmd[] = { "dmdev", NULL };
+//static const char *devOptioncmd[] = { "dmdev", NULL };
 /* Telegram */
 static const char *Telegramcmd[] = { "telegram-desktop", NULL };
 /* Discord */
@@ -41,6 +41,6 @@ static const char *emojicmd[] = { "dmenuunicode", NULL };
 /* attivare e disattivare il toucpad */
 static const char *touchpadcmd[] = { "touchpad", NULL };
 /*posta elettronica */
-static const char *tutacmd[] = { "tuta.AppImage", NULL };
+//static const char *tutacmd[] = { "tuta.AppImage", NULL };
 /* Impostazioni di sistema */
 static const char *Impcmd[] = { "dmOps",NULL };

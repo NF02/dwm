@@ -1,6 +1,13 @@
 /* appearance */
+static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 15;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
+
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const char panel[][20]       = { "xfce4-panel", "Xfce4-panel" }; /* name & cls of panel win */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=11;antialias=true:autohint=true" };
@@ -9,7 +16,7 @@ static const char dmenufont[]       = "monospace:size=10";
 /* colors */
 static const char normbgcolor[]     = "#222222";
 static const char normbordercolor[] = "#444444";
-static const char normfgcolor[]   = "#bbbbbb";
+static const char normfgcolor[]     = "#bbbbbb";
 static const char selfgcolor[]      = "#770000";
 static const char selbordercolor[]  = "#eeeeee";
 static const char selbgcolor[]      = "#005577";
@@ -30,6 +37,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ panel[1],   NULL,       NULL,       (1 << 9) - 1, 1,           -1 },
 };
 
 /* layout(s) */
@@ -38,10 +46,18 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
+#include "lib/layout.c"
+
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "TTT",      bstack },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
+	{ "[@]",      spiral },
+	{ "[\\]",     dwindle },
+	{ "DD",       doubledeck },
 	{ "[M]",      monocle },
 };
 
@@ -55,7 +71,6 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
-
 
 
 /* terminal */
@@ -84,6 +99,22 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[5]} },
+	{ 0,                            XK_Print,  spawn,          {.v = screenshot } },
+	{ 0,			        XF86ScreenSaver, spawn,    SHCMD("xscreensaver-command -lock") },
+	{ 0,				XF86MonBrightnessDown, spawn, {.v = cmdbrightnessdown } },
+	{ 0,				XF86MonBrightnessUp, spawn, {.v = cmdbrightnessup } },
+	{ 0,				XF86AudioMute, spawn, {.v = cmdsoundtoggle } },
+	{ 0,				XF86AudioRaiseVolume, spawn, {.v = cmdsoundup } },
+	{ 0,		      		XF86AudioLowerVolume, spawn, {.v = cmdsounddown } },
+	{ 0,				XF86AudioMicMute, spawn,	{.v = cmdMicOff } },
+	{ 0,							XF86Display,			spawn,		{.v = screenSwitch } },
+	{ 0,							XF86AudioNext,			spawn,		SHCMD("playerctl next") },
+	{ 0,							XF86AudioPause,			spawn,		SHCMD("playerctl pause") },
+	{ 0,							XF86AudioPlay,			spawn,		SHCMD("playerctl play") },
+	{ 0,							XF86AudioStop,			spawn,		SHCMD("playerctl stop") },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -92,6 +123,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_z,      incrgaps,       {.i = +3 } },
+	{ MODKEY|ShiftMask,             XK_z,      incrgaps,       {.i = -3 } },
+	{ MODKEY,                       XK_x,      incrogaps,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_x,      incrogaps,      {.i = -1 } },
+	{ MODKEY|Mod1Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
+	{ MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
