@@ -71,6 +71,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
+#define TERMCMD(cmd) { .v = (const char*[]){ "st", "-e", cmd, NULL } }
 
 
 /* terminal */
@@ -84,7 +85,7 @@ static const Layout layouts[] = {
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_Insert, spawn,	   {.v = clipcmd } },
-	{ MODKEY,                       XK_n,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -136,7 +137,7 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	/* app launcher */
-	{ MODKEY,                       XK_F1,     spawn,          SHCMD("st -e ranger") },
+	{ MODKEY,                       XK_F1,     spawn,          TERMCMD("ranger") },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = emojicmd } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = Webcmd } },
 	{ MODKEY,                       XK_F7,     spawn,          {.v = Impcmd } },
