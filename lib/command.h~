@@ -1,7 +1,7 @@
 /* commands */
 /* clipboard */
 //static const char *urlcmd[]		= { "clipmenu-url", NULL };
-//static const char *clipcmd[]	= { "clipmenu", "-i", "-fn", dmenufont, NULL };
+static const char *clipcmd[]	= { "clipmenu", "-i", "-fn", dmenufont, NULL };
 //static const char *passmenu[]	= { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 
 
@@ -43,7 +43,7 @@ static const char *Telegramcmd[] = { "telegram-desktop", NULL };
 /* Discord */
 static const char *Discordcmd[] = { "discord", NULL };
 /* Emoji */
-//static const char *emojicmd[] = { "dmenuunicode", NULL };
+static const char *emojicmd[] = { "dmenuunicode", NULL };
 /* attivare e disattivare il toucpad */
 // static const char *touchpadcmd[] = { "touchpad", NULL };
 /*posta elettronica */

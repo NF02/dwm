@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include "/home/nico/.cache/wal/colors-wal-dwm.h"
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
@@ -12,13 +13,11 @@ static const char normfgcolor[]     = "#bbbbbb";
 static const char selfgcolor[]      = "#770000";
 static const char selbordercolor[]  = "#eeeeee";
 static const char selbgcolor[]      = "#005577";
-
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel]  = { selfgcolor, selbgcolor,  selbordercolor  },
-};
-
+/* static const char *colors[][3]      = { */
+/* 	/\*               fg         bg         border   *\/ */
+/* 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor }, */
+/* 	[SchemeSel]  = { selfgcolor, selbgcolor,  selbordercolor  }, */
+/* }; */
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -62,7 +61,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
-#define TERMCMD(cmd) { .v = (const char*[]){ "st", "-e", cmd, NULL } }
+
 /* terminal */
 #define TERM "st"
 #define TMUX "st -e tmux"
@@ -72,7 +71,6 @@ static const Layout layouts[] = {
 #include "lib/keyWorld.h"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_Print,  spawn,	   {.v = screenshot } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -99,8 +97,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },	
-	/* media control key */
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ 0,                            XF86MonBrightnessDown, spawn, {.v = cmdbrightnessdown } },
 	{ 0,                            XF86MonBrightnessUp, spawn, {.v = cmdbrightnessup } },
 	{ 0,                            XF86AudioMute, spawn, {.v = cmdsoundtoggle } },
@@ -108,17 +105,11 @@ static const Key keys[] = {
 	{ 0,                            XF86AudioLowerVolume, spawn, {.v = cmdsounddown } },
 	{ 0,                            XF86AudioMicMute, spawn,	{.v = cmdMicOff } },
 	{ 0,                            XF86Display,			spawn,		{.v = screenSwitch } },
-	{ 0,                            XF86AudioNext,			spawn,		{.v = cmdnext } },
-	{ 0,                            XF86AudioPause,			spawn,		{.v = cmdplay } },
-	{ 0,                            XF86AudioPlay,			spawn,		{.v = cmdplay } },
-	{ 0,                            XF86AudioStop,			spawn,		{.v = cmdstop } },
-	{ 0,                            XF86AudioPrev,			spawn,		{.v = cmdprev } },
-	{ MODKEY,                       XK_F1,     spawn,          TERMCMD("ranger") },
-	{ MODKEY,                       XK_F6,     spawn,          {.v = Webcmd } },
-	{ MODKEY,                       XK_F7,     spawn,          {.v = Impcmd } },
-	{ MODKEY,                       XK_F8,     spawn,          {.v = Telegramcmd } },
-	{ MODKEY,                       XK_F9,     spawn,          {.v = mailcmd } },
-	{ MODKEY,                       XK_F10,    spawn,          {.v = Discordcmd } },
+	{ 0,                            XF86AudioNext,			spawn,		SHCMD("playerctl next") },
+	{ 0,                            XF86AudioPause,			spawn,		SHCMD("playerctl pause") },
+	{ 0,                            XF86AudioPlay,			spawn,		SHCMD("playerctl play") },
+	{ 0,                            XF86AudioStop,			spawn,		SHCMD("playerctl stop") },
+	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
