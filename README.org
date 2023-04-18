@@ -25,7 +25,7 @@ the DISPLAY environment variable is set correctly, e.g.:
 #+begin_src bash
 DISPLAY=foo.bar:1 exec dwm
 #+end_src
-(This will start dwm on display :1 of the host foo.bar.)
+(This will start dwm on display *:1* of the host foo.bar.)
 
 In order to display status info in the bar, you can do something
 like this in your .xinitrc:
@@ -40,3 +40,43 @@ like this in your .xinitrc:
 ** Configuration
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+*** Short config
+To add new shortcuts, you need to edit the file located in *lib/commend.h*, adding a constant string with the following
+constant:
+#+begin_src c
+  ...
+  static const char *Namecmd[] = {"command", NULL};
+  ...
+#+end_src
+The command must be one of the reference shell, typically /*bash or zsh*/, so we can use all the programs that can be summoned
+from the terminal.
+
+*** X11 Special key
+The library located in lib/keyWorld.h introduces the i3wm key nomenclature quickly and easily.
+#+begin_src c
+/* Video controls */
+#define XF86WebCam			0x1008FF8F   /* Launch web camera app. */
+#define XF86SplitScreen			0x1008FF7D   /* Split window or screen */
+
+/* Audio controls */
+#define XF86AudioMicMute		0x1008FFB2   /* Mute the Mic from the system */
+#define XF86AudioLowerVolume		0x1008FF11   /* Volume control down          */
+#define XF86AudioMute			0x1008FF12   /* Mute sound from the system   */
+#define XF86AudioRaiseVolume		0x1008FF13   /* Volume control up            */
+
+/* Luminosità dello schermo */
+#define XF86MonBrightnessUp     	0x1008FF02   /* Monitor/panel brightness */
+#define XF86MonBrightnessDown   	0x1008FF03   /* Monitor/panel brightness */
+#define XF86ScreenSaver			0x1008FF2D   /* Invoke screensaver       */
+#define XF86Display			0x1008FF59
+
+#define XF86AudioPlay			0x1008FF14
+
+#define XF86AudioStop			0x1008FF15
+#define XF86AudioPrev			0x1008FF16
+#define	XF86AudioNext			0x1008FF17
+#define XF86AudioPause			0x1008FF31
+
+#define XF86XAudioMedia			0x1008FF32   /* Launch media collection app */
+#+end_src
