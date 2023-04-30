@@ -80,3 +80,4 @@ The library located in lib/keyWorld.h introduces the i3wm key nomenclature quick
 
 #define XF86XAudioMedia			0x1008FF32   /* Launch media collection app */
 #+end_src
+Instead of,

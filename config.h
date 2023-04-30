@@ -72,6 +72,7 @@ static const Layout layouts[] = {
 #include "lib/keyWorld.h"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+  	{ MODKEY,                       XK_e,      spawn,	   {.v = emojicmd } },
 	{ MODKEY,                       XK_Print,  spawn,	   {.v = screenshot } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },

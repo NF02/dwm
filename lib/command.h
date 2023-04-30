@@ -51,3 +51,4 @@ static const char *Discordcmd[] = { "discord", NULL };
 static const char *mailcmd[] = { "thunderbird", NULL };
 /* Impostazioni di sistema */
 static const char *Impcmd[] = { "dmOps",NULL };
+static const char *emojicmd[] = { "dmenuunicode", NULL };
