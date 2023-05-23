@@ -73,6 +73,7 @@ static const Layout layouts[] = {
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
   	{ MODKEY,                       XK_e,      spawn,	   {.v = emojicmd } },
+  	{ MODKEY,                       XK_Insert, spawn,	   {.v = clipcmd } },
 	{ MODKEY,                       XK_Print,  spawn,	   {.v = screenshot } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
@@ -114,7 +115,10 @@ static const Key keys[] = {
 	{ 0,                            XF86AudioPause,			spawn,		{.v = cmdplay } },
 	{ 0,                            XF86AudioPlay,			spawn,		{.v = cmdplay } },
 	{ 0,                            XF86AudioStop,			spawn,		{.v = cmdstop } },
-	{ 0,                            XF86AudioPrev,			spawn,		{.v = cmdprev } },
+	{ 0,                            XF86AudioPrev,			spawn,		{.v = cmdprev } },	
+	{ 0,                            XF86MonBrightnessUp,			spawn,		{.v = brighter } },
+	{ 0,                            XF86MonBrightnessDown,			spawn,		{.v = dimmer } },
+	{ 0,                            XF86ScreenSaver, spawn,  SHCMD("slock") },
 	{ MODKEY,                       XK_F1,     spawn,          TERMCMD("ranger") },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = kdeconcmd } },
 	{ MODKEY,                       XK_F3,     spawn,          {.v = bluemancmd } },
