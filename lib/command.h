@@ -50,5 +50,11 @@ static const char *Discordcmd[] = { "discord", NULL };
 //static const char *tutacmd[] = { "tuta.AppImage", NULL };
 static const char *mailcmd[] = { "thunderbird", NULL };
 /* Impostazioni di sistema */
-static const char *Impcmd[] = { "dmOps",NULL };
+static const char *Impcmd[] = { "dmOps", NULL };
 static const char *emojicmd[] = { "dmenuunicode", NULL };
+
+/* kde connect */
+static const char *kdeconcmd[] = { "kdeconnect-app", NULL };
+
+/* bluetooth */
+static const char *bluemancmd[] = { "blueman-manager", NULL };

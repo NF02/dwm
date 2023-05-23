@@ -116,6 +116,8 @@ static const Key keys[] = {
 	{ 0,                            XF86AudioStop,			spawn,		{.v = cmdstop } },
 	{ 0,                            XF86AudioPrev,			spawn,		{.v = cmdprev } },
 	{ MODKEY,                       XK_F1,     spawn,          TERMCMD("ranger") },
+	{ MODKEY,                       XK_F2,     spawn,          {.v = kdeconcmd } },
+	{ MODKEY,                       XK_F3,     spawn,          {.v = bluemancmd } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = Webcmd } },
 	{ MODKEY,                       XK_F7,     spawn,          {.v = Impcmd } },
 	{ MODKEY,                       XK_F8,     spawn,          {.v = Telegramcmd } },
