@@ -1,7 +1,7 @@
 /* commands */
 /* clipboard */
 //static const char *urlcmd[]		= { "clipmenu-url", NULL };
-//static const char *clipcmd[]	= { "clipmenu", "-i", "-fn", dmenufont, NULL };
+static const char *clipcmd[]	= { "clipmenu", "-i", "-fn", dmenufont, NULL };
 //static const char *passmenu[]	= { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 
 
@@ -58,3 +58,7 @@ static const char *kdeconcmd[] = { "kdeconnect-app", NULL };
 
 /* bluetooth */
 static const char *bluemancmd[] = { "blueman-manager", NULL };
+
+/* brightness */
+static const char *brighter[] = { "brightnessctl", "set", "10%+", NULL };
+static const char *dimmer[]   = { "brightnessctl", "set", "10%-", NULL };

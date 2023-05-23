@@ -22,3 +22,5 @@
 #define XF86AudioPause			0x1008FF31
 
 #define XF86XAudioMedia			0x1008FF32   /* Launch media collection app */
+
+#define XF8ModeLock		0x1008FF01	/* Mode Switch Lock */
